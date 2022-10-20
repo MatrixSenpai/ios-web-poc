@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Test HTML File</title>
+    </head>
+    <body>
+        <h1>Hello, world!</h1>
+        <button id='tappable'>Tap me!</button>
+
+        <script>
+            document.getElementById('tappable').addEventListener('click', () => {
+                window.webkit.messageHandlers.ios_buttonTapped.postMessage("bite my shiny metal ass!");
+            });
+        </script>
+    </body>
+</html>
