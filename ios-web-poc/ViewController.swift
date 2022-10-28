@@ -24,8 +24,9 @@ class ViewController: UIViewController, WKNavigationDelegate {
         webView.configuration.userContentController.add(self, name: "seatmapClient")
 
         webView.publisher(for: \.isLoading, options: [.new])
+            .delay(for: 0.1, scheduler: DispatchQueue.main)
             .sink { [unowned self] value in
-                guard value else { return }
+                guard !value else { return }
                 webView.evaluateJavaScript("window.postMessage({\"name\":\"setMessagePort\", \"params\": {\"webkitHandlerName\": \"seatmapClient\"}})")
                 webView.evaluateJavaScript("window.postMessage(\(configureString))")
             }
@@ -43,8 +44,6 @@ struct Callback {
 
 extension ViewController: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if message.name == "seatmapClient" {
-            print("Button tapped: \(message.body)")
-        }
+        print(message.name, message.body)
     }
 }
