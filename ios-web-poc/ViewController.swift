@@ -7,38 +7,29 @@
 
 import UIKit
 import WebKit
-
-func delay(_ delay: Double = 1, closure: @escaping () -> Void) {
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delay) {
-        closure()
-    }
-}
+import Combine
 
 class ViewController: UIViewController, WKNavigationDelegate {
 
     @IBOutlet weak var webView: WKWebView!
 
+    var bag = Set<AnyCancellable>()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Load in an html file written locally
-//        let htmlFile = Bundle.main.url(forResource: "test-file", withExtension: "html")!
-//        webView.loadFileURL(htmlFile, allowingReadAccessTo: htmlFile)
-//        let request = URLRequest(url: htmlFile)
-//        webView.load(request)
-
-        var urlRequest = URLRequest(url: URL(string: "http://yoop-web-av-seatmap-3.oak.dev.yoop.app/seating/seatingChart")!)
+        let urlRequest = URLRequest(url: URL(string: "http://yoop-web-av-seatmap-3.oak.dev.yoop.app/seating/seatingChart")!)
         webView.load(urlRequest)
         webView.navigationDelegate = self
         webView.configuration.userContentController.add(self, name: "seatmapClient")
-    }
 
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        delay(0.5) {
-            webView.evaluateJavaScript("window.postMessage({\"name\":\"setMessagePort\", \"params\": {\"webkitHandlerName\": \"seatmapClient\"}})")
-            webView.evaluateJavaScript("window.postMessage(\(configureString))")
-        }
-
+        webView.publisher(for: \.isLoading, options: [.new])
+            .sink { [unowned self] value in
+                guard value else { return }
+                webView.evaluateJavaScript("window.postMessage({\"name\":\"setMessagePort\", \"params\": {\"webkitHandlerName\": \"seatmapClient\"}})")
+                webView.evaluateJavaScript("window.postMessage(\(configureString))")
+            }
+            .store(in: &bag)
     }
 }
 
