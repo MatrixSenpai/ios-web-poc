@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test HTML</title>
+    </head>
+    <body>
+        <p>nothing to see here</p>
+        <script>
+            console.log("Running script")
+            window.addEventListener('message', e => {
+                if e.data.name === 'request' {
+                    window.webkit.messageHandlers.seatmapClient.postMessage({
+                        name: 'response',
+                        params: e.data.params.value
+                    });
+                }
+            })
+            window.setTimeout(() => {
+                window.webkit.messageHandlers.seatmapClient.postMessage({
+                    name: 'handled',
+                    params: 'some value'
+                });
+                window.webkit.messageHandlers.seatmapClient.postMessage({
+                    name: 'ignored',
+                    params: 'some ignored value'
+                });
+            }, 3000)
+        </script>
+    </body>
+</html>

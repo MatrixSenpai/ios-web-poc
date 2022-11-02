@@ -18,19 +18,19 @@ class ViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let urlRequest = URLRequest(url: URL(string: "http://yoop-web-av-seatmap-3.oak.dev.yoop.app/seating/seatingChart")!)
-        webView.load(urlRequest)
-        webView.navigationDelegate = self
-        webView.configuration.userContentController.add(self, name: "seatmapClient")
-
-        webView.publisher(for: \.isLoading, options: [.new])
-            .delay(for: 0.1, scheduler: DispatchQueue.main)
-            .sink { [unowned self] value in
-                guard !value else { return }
-                webView.evaluateJavaScript("window.postMessage({\"name\":\"setMessagePort\", \"params\": {\"webkitHandlerName\": \"seatmapClient\"}})")
-                webView.evaluateJavaScript("window.postMessage(\(configureString))")
-            }
-            .store(in: &bag)
+//        let urlRequest = URLRequest(url: URL(string: "https://seatmap.dev.yoop.app/seating/seatingChart")!)
+//        webView.load(urlRequest)
+//        webView.navigationDelegate = self
+//        webView.configuration.userContentController.add(self, name: "seatmapClient")
+//
+//        webView.publisher(for: \.isLoading, options: [.new])
+//            .delay(for: 0.2, scheduler: DispatchQueue.main)
+//            .sink { [unowned self] value in
+//                guard !value else { return }
+//                webView.evaluateJavaScript("window.postMessage({\"name\":\"setMessagePort\", \"params\": {\"webkitHandlerName\": \"seatmapClient\"}})")
+//                webView.evaluateJavaScript("window.postMessage(\(configureString))")
+//            }
+//            .store(in: &bag)
     }
 }
 

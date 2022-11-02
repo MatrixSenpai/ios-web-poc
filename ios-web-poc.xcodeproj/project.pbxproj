@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		28119065290ACA8F00DB9AC7 /* SeatmapCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119064290ACA8F00DB9AC7 /* SeatmapCalls.swift */; };
+		28BFD5D32912E3F400991AEF /* WKWebViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFD5D22912E3F400991AEF /* WKWebViewWrapper.swift */; };
+		28BFD5DD2912E64A00991AEF /* ios_web_pocTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFD5DC2912E64A00991AEF /* ios_web_pocTests.swift */; };
+		28BFD5E42912E67800991AEF /* WebWrapperTests2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFD5E32912E67800991AEF /* WebWrapperTests2.swift */; };
+		28BFD5E62912E78000991AEF /* webview_test.html in Resources */ = {isa = PBXBuildFile; fileRef = 28BFD5E52912E78000991AEF /* webview_test.html */; };
+		28BFD5E72912E78000991AEF /* webview_test.html in Resources */ = {isa = PBXBuildFile; fileRef = 28BFD5E52912E78000991AEF /* webview_test.html */; };
 		2AA9F0372901A8AC00520FE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9F0362901A8AC00520FE1 /* AppDelegate.swift */; };
 		2AA9F0392901A8AC00520FE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9F0382901A8AC00520FE1 /* SceneDelegate.swift */; };
 		2AA9F03B2901A8AC00520FE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9F03A2901A8AC00520FE1 /* ViewController.swift */; };
@@ -17,8 +22,23 @@
 		2AA9F04B2901AA6700520FE1 /* test-file.html in Resources */ = {isa = PBXBuildFile; fileRef = 2AA9F04A2901AA6700520FE1 /* test-file.html */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		28BFD5DE2912E64A00991AEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AA9F02B2901A8AC00520FE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AA9F0322901A8AC00520FE1;
+			remoteInfo = "ios-web-poc";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		28119064290ACA8F00DB9AC7 /* SeatmapCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatmapCalls.swift; sourceTree = "<group>"; };
+		28BFD5D22912E3F400991AEF /* WKWebViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewWrapper.swift; sourceTree = "<group>"; };
+		28BFD5DA2912E64900991AEF /* ios-web-pocTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-web-pocTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28BFD5DC2912E64A00991AEF /* ios_web_pocTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_web_pocTests.swift; sourceTree = "<group>"; };
+		28BFD5E32912E67800991AEF /* WebWrapperTests2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebWrapperTests2.swift; sourceTree = "<group>"; };
+		28BFD5E52912E78000991AEF /* webview_test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = webview_test.html; sourceTree = "<group>"; };
 		2AA9F0332901A8AC00520FE1 /* ios-web-poc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-web-poc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AA9F0362901A8AC00520FE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AA9F0382901A8AC00520FE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +51,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		28BFD5D72912E64900991AEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2AA9F0302901A8AC00520FE1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -41,10 +68,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28BFD5DB2912E64A00991AEF /* ios-web-pocTests */ = {
+			isa = PBXGroup;
+			children = (
+				28BFD5DC2912E64A00991AEF /* ios_web_pocTests.swift */,
+			);
+			path = "ios-web-pocTests";
+			sourceTree = "<group>";
+		};
 		2AA9F02A2901A8AC00520FE1 = {
 			isa = PBXGroup;
 			children = (
 				2AA9F0352901A8AC00520FE1 /* ios-web-poc */,
+				28BFD5DB2912E64A00991AEF /* ios-web-pocTests */,
 				2AA9F0342901A8AC00520FE1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				2AA9F0332901A8AC00520FE1 /* ios-web-poc.app */,
+				28BFD5DA2912E64900991AEF /* ios-web-pocTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +97,7 @@
 		2AA9F0352901A8AC00520FE1 /* ios-web-poc */ = {
 			isa = PBXGroup;
 			children = (
+				28BFD5E52912E78000991AEF /* webview_test.html */,
 				2AA9F0362901A8AC00520FE1 /* AppDelegate.swift */,
 				2AA9F0382901A8AC00520FE1 /* SceneDelegate.swift */,
 				2AA9F03A2901A8AC00520FE1 /* ViewController.swift */,
@@ -69,6 +107,8 @@
 				2AA9F0412901A8AE00520FE1 /* LaunchScreen.storyboard */,
 				2AA9F0442901A8AE00520FE1 /* Info.plist */,
 				28119064290ACA8F00DB9AC7 /* SeatmapCalls.swift */,
+				28BFD5D22912E3F400991AEF /* WKWebViewWrapper.swift */,
+				28BFD5E32912E67800991AEF /* WebWrapperTests2.swift */,
 			);
 			path = "ios-web-poc";
 			sourceTree = "<group>";
@@ -76,6 +116,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		28BFD5D92912E64900991AEF /* ios-web-pocTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28BFD5E02912E64A00991AEF /* Build configuration list for PBXNativeTarget "ios-web-pocTests" */;
+			buildPhases = (
+				28BFD5D62912E64900991AEF /* Sources */,
+				28BFD5D72912E64900991AEF /* Frameworks */,
+				28BFD5D82912E64900991AEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28BFD5DF2912E64A00991AEF /* PBXTargetDependency */,
+			);
+			name = "ios-web-pocTests";
+			productName = "ios-web-pocTests";
+			productReference = 28BFD5DA2912E64900991AEF /* ios-web-pocTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2AA9F0322901A8AC00520FE1 /* ios-web-poc */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2AA9F0472901A8AE00520FE1 /* Build configuration list for PBXNativeTarget "ios-web-poc" */;
@@ -100,9 +158,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					28BFD5D92912E64900991AEF = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 2AA9F0322901A8AC00520FE1;
+					};
 					2AA9F0322901A8AC00520FE1 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -122,16 +184,26 @@
 			projectRoot = "";
 			targets = (
 				2AA9F0322901A8AC00520FE1 /* ios-web-poc */,
+				28BFD5D92912E64900991AEF /* ios-web-pocTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		28BFD5D82912E64900991AEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28BFD5E72912E78000991AEF /* webview_test.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2AA9F0312901A8AC00520FE1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2AA9F0432901A8AE00520FE1 /* LaunchScreen.storyboard in Resources */,
+				28BFD5E62912E78000991AEF /* webview_test.html in Resources */,
 				2AA9F0402901A8AE00520FE1 /* Assets.xcassets in Resources */,
 				2AA9F04B2901AA6700520FE1 /* test-file.html in Resources */,
 				2AA9F03E2901A8AC00520FE1 /* Main.storyboard in Resources */,
@@ -141,18 +213,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		28BFD5D62912E64900991AEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28BFD5DD2912E64A00991AEF /* ios_web_pocTests.swift in Sources */,
+				28BFD5E42912E67800991AEF /* WebWrapperTests2.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2AA9F02F2901A8AC00520FE1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2AA9F03B2901A8AC00520FE1 /* ViewController.swift in Sources */,
 				2AA9F0372901A8AC00520FE1 /* AppDelegate.swift in Sources */,
+				28BFD5D32912E3F400991AEF /* WKWebViewWrapper.swift in Sources */,
 				2AA9F0392901A8AC00520FE1 /* SceneDelegate.swift in Sources */,
 				28119065290ACA8F00DB9AC7 /* SeatmapCalls.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		28BFD5DF2912E64A00991AEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2AA9F0322901A8AC00520FE1 /* ios-web-poc */;
+			targetProxy = 28BFD5DE2912E64A00991AEF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2AA9F03C2901A8AC00520FE1 /* Main.storyboard */ = {
@@ -174,6 +264,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		28BFD5E12912E64A00991AEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 766G69C235;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "testing.ios-web-pocTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-web-poc.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ios-web-poc";
+			};
+			name = Debug;
+		};
+		28BFD5E22912E64A00991AEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 766G69C235;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "testing.ios-web-pocTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-web-poc.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ios-web-poc";
+			};
+			name = Release;
+		};
 		2AA9F0452901A8AE00520FE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -347,6 +477,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		28BFD5E02912E64A00991AEF /* Build configuration list for PBXNativeTarget "ios-web-pocTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28BFD5E12912E64A00991AEF /* Debug */,
+				28BFD5E22912E64A00991AEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2AA9F02E2901A8AC00520FE1 /* Build configuration list for PBXProject "ios-web-poc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
